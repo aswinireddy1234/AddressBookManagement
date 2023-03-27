@@ -69,7 +69,7 @@ public class NewContacts {
         }
     }
 
-    class addressbooksystem {
+    class NewContact {
 
         private String firstName;
         private String lastName;
