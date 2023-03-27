@@ -94,4 +94,22 @@ class Contact {
     public String toString() {
         return firstName + " " + lastName + "\n" + address + "\n" + city + ", " + state + " " + zip + "\n" + phone + "\n" + email + "\n";
     }
+
+    public void setCity(String city) {
+    }
+
+    public void setState(String state) {
+    }
+
+    public void setZip(String zip) {
+    }
+
+    public void setPhone(String phone) {
+    }
+
+    public void setEmail(String email) {
+    }
+
+    public void setAddress(String address) {
+    }
 }
