@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Addmultipleaddress {
     
         public static ArrayList<AddressBook> addressBook_arr = new ArrayList<>();
-//    public static ArrayList<Contact> cotacts_array=new ArrayList<>();
+//    public static ArrayList<Contact> contacts_array=new ArrayList<>();
 
         public static void main(String[] args) {
             System.out.println("      ~ Welcome to Address Book ~      ");
