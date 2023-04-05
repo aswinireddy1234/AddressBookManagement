@@ -153,6 +153,15 @@ import java.util.Scanner;
                 return false;
             }
         }
+
+        public static void addPersonDetails() {
+        }
+
+        public static void editPersonDetails() {
+        }
+
+        public static void deletePersonDetails() {
+        }
     }
 
     class addContact {
