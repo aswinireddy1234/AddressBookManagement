@@ -14,7 +14,8 @@ import java.util.Scanner;
                 System.out.println("2. List all contacts");
                 System.out.println("3. Edit contact");
                 System.out.println("4. Delete contact");
-                System.out.println("5.Search the contact");
+                System.out.println("5. Search the contact");
+                System.out.println("6. View the contact");
                 System.out.println("0. Quit");
 
                 int option = scanner.nextInt();
@@ -114,6 +115,24 @@ import java.util.Scanner;
                             System.out.println("No contacts found.");
                         }
                         break;
+                    case 6:
+                        contacts = addressBook.getContacts();
+                        System.out.println("Enter City name of the contact to search:");
+                        String viewCity = scanner.nextLine();
+                        System.out.println("Enter State name of the contact to search:");
+                        String viewState = scanner.nextLine();
+
+                        boolean view = addressBook.searchContact(viewCity, viewState);
+                        if (contacts.size() > 0) {
+                            System.out.println("view the contact:");
+                            for (Contact c : contacts) {
+                                System.out.println(c.toString());
+                            }
+                        } else {
+                            System.out.println("No contacts found.");
+                        }
+                        break;
+
 
                     case 0:
                         quit = true;
