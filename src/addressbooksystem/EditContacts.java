@@ -4,21 +4,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EditContacts {
-
-        private List<Contact> contacts;
-
-        public EditContacts() {
+    private List<Contact> contacts;
+    public EditContacts() {
             contacts = new ArrayList<Contact>();
         }
-
         public void addContact(Contact contact) {
             contacts.add(contact);
         }
-
         public List<Contact> getContacts() {
             return contacts;
         }
-
         public Contact getContactByName(String firstName, String lastName) {
             for (Contact contact : contacts) {
                 if (contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName)) {
@@ -27,13 +22,10 @@ public class EditContacts {
             }
             return null;
         }
-
         public static void main(String[] args) {
            EditContacts addressBook = new EditContacts();
-
-            // create scanner for console input
+           // create scanner for console input
             Scanner scanner = new Scanner(System.in);
-
             // loop to add/edit contacts
             while (true) {
                 System.out.print("Enter 'add' to add a new contact, 'edit' to edit an existing contact, or 'quit' to exit: ");
@@ -41,7 +33,6 @@ public class EditContacts {
                 if (action.equals("quit")) {
                     break;
                 }
-
                 if (action.equals("add")) {
                     // prompt user for new contact information
                     System.out.print("Enter first name: ");
@@ -131,25 +122,18 @@ public class EditContacts {
         private String zip;
         private String phone;
         private String email;
-
         public static void setCity(String city) {
         }
-
         public static void setState(String state) {
         }
-
         public static void setZip(String zip) {
         }
-
         public static void setPhone(String phone) {
         }
-
         public static void setEmail(String email) {
         }
-
         public static void setAddress(String address) {
         }
-
         public void EditContact(String firstName, String lastName, String address, String city, String state, String zip, String phone, String email) {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -160,9 +144,6 @@ public class EditContacts {
             this.phone = phone;
             this.email = email;
         }
-
-       
-
         @Override
         public String toString() {
             return firstName + " " + lastName + "\n" +

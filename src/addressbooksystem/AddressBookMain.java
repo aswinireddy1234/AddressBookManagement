@@ -14,6 +14,7 @@ import java.util.Scanner;
                 System.out.println("2. List all contacts");
                 System.out.println("3. Edit contact");
                 System.out.println("4. Delete contact");
+                System.out.println("5.Search the contact");
                 System.out.println("0. Quit");
 
                 int option = scanner.nextInt();
@@ -96,6 +97,23 @@ import java.util.Scanner;
                             System.out.println("Contact not found.");
                         }
                         break;
+                    case 5:
+                        contacts = addressBook.getContacts();
+                        System.out.println("Enter City name of the contact to search:");
+                        String searchCity = scanner.nextLine();
+                        System.out.println("Enter State name of the contact to search:");
+                        String searchState = scanner.nextLine();
+
+                        boolean search = addressBook.searchContact(searchCity, searchState);
+                        if (contacts.size() > 0) {
+                            System.out.println("Search the contact:");
+                            for (Contact c : contacts) {
+                                System.out.println(c.toString());
+                            }
+                        } else {
+                            System.out.println("No contacts found.");
+                        }
+                        break;
 
                     case 0:
                         quit = true;
@@ -110,7 +128,6 @@ import java.util.Scanner;
             scanner.close();
         }
     }
-
     class AddressBook {
         private ArrayList<Contact> contacts;
 
@@ -162,6 +179,10 @@ import java.util.Scanner;
 
         public static void deletePersonDetails() {
         }
+
+        public boolean searchContact(String searchCity, String searchState) {
+            return false;
+        }
     }
 
     class addContact {
@@ -188,67 +209,51 @@ import java.util.Scanner;
         public String getFirstName() {
             return this.firstName;
         }
-
         public void setFirstName(String firstName) {
             this.firstName = firstName;
         }
-
         public String getLastName() {
             return this.lastName;
         }
-
         public void setLastName(String lastName) {
             this.lastName = lastName;
         }
-
         public String getAddress() {
             return this.address;
         }
-
         public void setAddress(String address) {
             this.address = address;
         }
-
         public String getCity() {
             return this.city;
         }
-
         public void setCity(String city) {
             this.city = city;
         }
-
         public String getState() {
             return this.state;
         }
-
         public void setState(String state) {
             this.state = state;
         }
-
         public String getZip() {
             return this.zip;
         }
-
         public void setZip(String zip) {
             this.zip = zip;
         }
-
         public String getPhone() {
             return this.phone;
         }
-
         public void setPhone(String phone) {
             this.phone = phone;
         }
-
         public String getEmail() {
             return this.email;
         }
-
         public void setEmail(String email) {
             this.email = email;
         }
-
         public String toString() {
             return this.firstName + " " + this.lastName + "\n" +
                     this.address + "\n" +
