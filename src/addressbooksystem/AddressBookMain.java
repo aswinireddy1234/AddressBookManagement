@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
     public class AddressBookMain {
+        private static Object sortFirstName;
+
         public static void main(String[] args) {
             AddressBook addressBook = new AddressBook();
             Scanner scanner = new Scanner(System.in);
@@ -16,6 +18,7 @@ import java.util.Scanner;
                 System.out.println("4. Delete contact");
                 System.out.println("5. Search the contact");
                 System.out.println("6. View the contact");
+                System.out.println("7. Sort contacts in Alphabetical Order");
                 System.out.println("0. Quit");
 
                 int option = scanner.nextInt();
@@ -117,9 +120,9 @@ import java.util.Scanner;
                         break;
                     case 6:
                         contacts = addressBook.getContacts();
-                        System.out.println("Enter City name of the contact to search:");
+                        System.out.println("Enter City name of the contact to view:");
                         String viewCity = scanner.nextLine();
-                        System.out.println("Enter State name of the contact to search:");
+                        System.out.println("Enter State name of the contact to view:");
                         String viewState = scanner.nextLine();
 
                         boolean view = addressBook.searchContact(viewCity, viewState);
@@ -132,6 +135,19 @@ import java.util.Scanner;
                             System.out.println("No contacts found.");
                         }
                         break;
+                    case 7:
+                    System.out.println("Enter First name of the contact to sort:");
+                    String FirstName = scanner.nextLine();
+            //        System.out.println("Enter last name of the contact to delete:");
+            //        String deleteLastName = scanner.nextLine();
+
+                    boolean sort = addressBook.sortContact(sortFirstName);
+                        if (sort) {
+                        System.out.println("Sort Contact in Aplhabetical Order.");
+                    } else {
+                        System.out.println("Contact not found.");
+                    }
+                    break;
 
 
                     case 0:
@@ -200,6 +216,10 @@ import java.util.Scanner;
         }
 
         public boolean searchContact(String searchCity, String searchState) {
+            return false;
+        }
+
+        public boolean sortContact(Object sortFirstName) {
             return false;
         }
     }
